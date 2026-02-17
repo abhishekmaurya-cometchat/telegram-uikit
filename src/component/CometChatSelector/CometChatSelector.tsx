@@ -6,13 +6,8 @@ import {
   Call,
 } from "@cometchat/chat-sdk-javascript";
 import { CometChatUIKitLoginListener } from "@cometchat/chat-uikit-react";
-import { CometChatGroup } from "../CometChat/CometChatGroup/CometChatGroup";
 import "./CometChatSelector.css";
-import CometChatTab from "../CometChatTab/CometChatTab";
-import { CometChatCall } from "../CometChat/CometChatCall/CometChatCall";
-import { CometChatUser } from "../CometChat/CometChatUser/CometChatUser";
 import { CometChatConvo } from "../CometChat/CometChatConvo/CometChatConvo";
-import { GroupButton } from "../GroupButton/GroupButton";
 
 interface SelectorProps {
   onSelectorItemClicked?: (
@@ -25,9 +20,8 @@ interface SelectorProps {
 
 export const CometChatSelector = (props: SelectorProps) => {
   // Destructure props with a default function for onSelectorItemClicked
-  const { onSelectorItemClicked, onNewChatClicked = () => {} } = props;
+  const { onSelectorItemClicked } = props;
   const [loggedInUser, setLoggedInUser] = useState<CometChat.User | null>();
-  const [activeTab, setActiveTab] = useState<string>("chats");
 
   // useEffect hook to fetch and set the logged-in user
   useEffect(() => {

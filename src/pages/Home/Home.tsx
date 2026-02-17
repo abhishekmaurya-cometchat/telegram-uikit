@@ -1,7 +1,6 @@
-import { useEffect, useState, useCallback, useMemo, useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 import "./Home.css";
 import {
-  CometChatActionsIcon,
   CometChatAIAssistantChat,
   CometChatButton,
   CometChatGroupMembers,
@@ -10,23 +9,15 @@ import {
   CometChatMessageHeader,
   CometChatMessageList,
   CometChatMessageTemplate,
-  CometChatReactions,
   CometChatThreadHeader,
   CometChatUIKit,
   CometChatUIKitConstants,
   CometChatUIKitLoginListener,
   isMessageSentByMe,
-  ChatConfigurator,
-  MessageBubbleAlignment,
-  CometChatMessageOption,
-  CometChatListItem,
 } from "@cometchat/chat-uikit-react";
 import {
   CometChat,
   GroupMember,
-  GroupMembersRequest,
-  GroupMembersRequestBuilder,
-  User,
 } from "@cometchat/chat-sdk-javascript";
 import { CometChatSelector } from "../../component/CometChatSelector/CometChatSelector";
 import "@cometchat/chat-uikit-react/css-variables.css";
@@ -35,7 +26,6 @@ import React from "react";
 import location from "../../assets/location.png";
 import sparkles from "../../assets/sparkles.png";
 import { ChatContext } from "../../context/ChatContext";
-import coffee from "../../assets/coffee-cup.png";
 
 interface Member {
   getUid: () => string;
@@ -65,7 +55,7 @@ function Home() {
     ? selectedGroup.getGuid()
     : selectedUser?.getUid();
 
-  const { setLoggedInUser, loggedInUser } = useContext(ChatContext);
+  const { setLoggedInUser } = useContext(ChatContext);
 
 
   /** Get Logged In User */
@@ -299,70 +289,7 @@ function Home() {
     };
   }, []);
 
-  /** Custom Reactions Footer View for Reactions */
-  const getFooterView = (message: CometChat.BaseMessage) =>
-    message.getReactions().length > 0 ? (
-      <CometChatReactions messageObject={message} />
-    ) : null;
 
-  /** Custom Options for Pinned Message*/
-  const getCustomOptions = (
-    loggedInUser: CometChat.User,
-    message: CometChat.BaseMessage,
-    group?: CometChat.Group
-  ) => {
-    const defaultOptions: any =
-      CometChatUIKit.getDataSource().getMessageOptions(
-        loggedInUser,
-        message,
-        group
-      );
-    const myView: any = new CometChatActionsIcon({
-      id: "pin",
-      title: "Pin",
-      iconURL: "",
-      onClick: () => {
-        CometChat.callExtension("pin-message", "POST", "v1/pin", {
-          msgId: message.getId(),
-        })
-          .then((response) => {
-            console.log("Pinned Msg", response);
-            setPinnedMsg(message);
-
-            let receiverID = "";
-            let receiverType = "";
-
-            if (group) {
-              receiverID = group.getGuid();
-              receiverType = CometChat.RECEIVER_TYPE.GROUP;
-            } else {
-              receiverID = loggedInUser.getUid();
-              receiverType = CometChat.RECEIVER_TYPE.USER;
-            }
-
-            const customData = {
-              msgId: message.getId(),
-              text: message.getData(),
-            };
-            const customType = "pin";
-
-            const customMessage = new CometChat.CustomMessage(
-              receiverID,
-              receiverType,
-              customType,
-              customData
-            );
-
-            CometChatUIKit.sendCustomMessage(customMessage)
-              .then((msg) => console.log("Custom message sent", msg))
-              .catch((err) => console.log("Custom message error", err));
-          })
-          .catch((error) => console.log("Pin extension error", error));
-      },
-    });
-    defaultOptions.splice(1, 0, myView);
-    return defaultOptions;
-  };
 
   /** Custom Message */
   // const getCustomMessageOptions = useCallback(
@@ -676,7 +603,7 @@ function Home() {
       //   );
       // },
 
-      contentView: (message: CometChat.BaseMessage) => getContentView(message),
+      contentView: (message: CometChat.BaseMessage) => getContentView(message) ?? null,
 
       // bubbleView: (message: CometChat.BaseMessage) => {
       //   return getContentView(message);
@@ -691,41 +618,7 @@ function Home() {
     setTemplates(definedTemplates);
   }, []);
 
-  const sendGifts = () => {
-    const image = coffee;
-    const title = "Gifted Bubble Tea";
-    const date = "Sept 20 6:15pm";
 
-    const receiverId = selectedGroup
-      ? selectedGroup.getGuid()
-      : selectedUser?.getUid();
-
-    const receiverType = selectedGroup
-      ? CometChat.RECEIVER_TYPE.GROUP
-      : CometChat.RECEIVER_TYPE.USER;
-
-    const giftsData = {
-      image,
-      title,
-      date,
-    };
-
-    const customMessage = new CometChat.CustomMessage(
-      receiverId!,
-      receiverType,
-      "gifts",
-      giftsData
-    );
-
-    CometChatUIKit.sendCustomMessage(customMessage).then(
-      (message) => {
-        console.log("custom message sent successfully", message);
-      },
-      (error) => {
-        console.log("custom message sending failed with error", error);
-      }
-    );
-  };
 
   // const getContentView = (message: CometChat.BaseMessage) => {
   //   if (
@@ -1167,7 +1060,7 @@ function Home() {
                         checked={addMem.some(
                           (user) => user.getUid() === m.getUid()
                         )}
-                        onChange={() => isChecked(m)}
+                        onChange={() => isChecked(m as unknown as CometChat.User)}
                       />
                     </div>
                   );
@@ -1176,7 +1069,7 @@ function Home() {
 
               <button
                 className="add-member-btn"
-                onClick={() => addMember(selectedGroup)}
+                onClick={() => selectedGroup && addMember(selectedGroup)}
               >
                 Add Member
               </button>

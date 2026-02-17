@@ -12,7 +12,7 @@ export const Login = () => {
   const { setLoggedInUser, setLanguage, lang } = useContext(ChatContext);
 
   useEffect(() => {
-    CometChatLocalize.init({ language: lang });
+    CometChatLocalize.init({ language: lang ?? undefined });
   }, [lang]);
 
   const handleLogin = async () => {

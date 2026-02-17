@@ -1,14 +1,12 @@
-import { StrictMode, useContext, useEffect } from "react";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import {
-  CometChatLocalize,
   CometChatUIKit,
   UIKitSettingsBuilder,
 } from "@cometchat/chat-uikit-react";
 import { ChatProvider } from "./context/ChatProvider";
-import { ChatContext } from "./context/ChatContext";
 
 const COMETCHAT_CONSTANTS = {
   APP_ID: "16707974c173ad0c7",
