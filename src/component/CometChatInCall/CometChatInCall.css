@@ -1,0 +1,32 @@
+.incoming-call__itemview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  align-self: stretch;
+}
+
+.incoming-call__itemview .cometchat-avatar,
+.incoming-call__itemview .cometchat-avatar__image {
+  height: 90px;
+  width: 90px;
+  border-radius: 24px;
+}
+
+.incoming-call__itemview .cometchat-avatar__text {
+  color: #FFF;
+  text-align: center;
+  font: 700 32px Roboto
+}
+
+.incoming-call__itemview-title {
+  color: #141414;
+  text-align: center;
+  font: 700 24px Roboto;
+}
+
+.incoming-call__itemview-subtitle {
+  color: var(--Color-Text-Color-Text-Secondary, #727272);
+  font: 400 16px Roboto;
+}

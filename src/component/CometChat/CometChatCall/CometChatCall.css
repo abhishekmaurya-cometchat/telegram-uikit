@@ -1,0 +1,38 @@
+.cometchat .cometchat-call-logs .cometchat-list__header-title {
+  background-color: #fce9ea;
+  color: #f76808;
+  border: 0px 1px 1px 0px solid #e5484d;
+  font-family: "Times New Roman";
+}
+
+.cometchat .cometchat-call-logs .cometchat-list-item__body-title {
+  overflow: hidden;
+  color: #141414;
+  text-overflow: ellipsis;
+  font-family: "Times New Roman";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19.2px;
+}
+
+.cometchat .cometchat-call-logs .cometchat-list-item__body-subtitle {
+  overflow: hidden;
+  color: #727272;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: "Times New Roman";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16.8px;
+}
+
+.cometchat .cometchat-call-logs .cometchat-avatar {
+  border-radius: 8px;
+  background: #fbaa75;
+}
+
+.cometchat .cometchat-call-logs .cometchat-avatar__image {
+  border-radius: 8px;
+}

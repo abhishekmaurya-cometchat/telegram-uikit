@@ -1,0 +1,458 @@
+.cometchat-conversations .cometchat-list-item__body-title,
+.cometchat-conversations .cometchat-list__header-title,
+.cometchat-conversations .cometchat-avatar__text,
+.cometchat-conversations .cometchat-badge,
+.cometchat-conversations .cometchat-conversations__subtitle-text {
+  font-family: "SF Pro";
+}
+
+.cometchat-conversations .cometchat-list__header-title {
+  background: #fef8f8;
+  border-bottom: 2px solid #f4b6b8;
+}
+
+.cometchat-conversations .cometchat-avatar {
+  background: #AA9EE8;
+  width: 60px;
+  border-radius: 75px;
+  height: 60px;
+}
+
+.cometchat-conversations .cometchat-status-indicator {
+  min-width: 10px;
+  height: 10px;
+}
+
+.cometchat-conversations .cometchat-badge {
+  background: #e5484d;
+}
+
+.cometchat-conversations .cometchat-receipts-read {
+  background: #e96b6f;
+}
+
+/* Header View */
+.custom-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  background: #ffffff;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+/* Hamburger icon */
+.custom-header .menu-icon {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.custom-header .menu-icon:hover {
+  background-color: rgb(212, 211, 211);
+  padding: 10px;
+  /* Increase padding on hover for larger background */
+}
+
+/* Search box wrapper */
+.search-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f3f4f7;
+  padding: 10px 16px;
+  border-radius: 40px;
+}
+
+/* Search icon inside the box */
+.search-icon {
+  font-size: 18px;
+  color: #7a7a7a;
+  display: flex;
+  align-items: center;
+}
+
+/* Input field styling */
+.search-box input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  outline: none;
+  color: #333;
+}
+
+.search-box input::placeholder {
+  color: #9c9c9c;
+}
+
+.conversation-item-wrapper {
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.conversation-item-wrapper.selected {
+  background-color: #4A90E2;
+}
+
+.conversation-item-wrapper.selected * {
+  color: #ffffff !important;
+}
+
+/* Optional: Add hover effect */
+.conversation-item-wrapper:hover {
+  background-color: #f0f0f0;
+}
+
+.conversation-item-wrapper.selected:hover {
+  background-color: #3d7ac7;
+}
+
+/* Trailing View */
+.trailing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  min-width: 60px;
+}
+
+.trailing-time {
+  font-size: 12px;
+  color: #555;
+  font-weight: 500;
+}
+
+.unread-badge {
+  background: #d1d0d0;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 26px;
+  text-align: center;
+}
+
+div.cometchat-list-item__body-title {
+  font-weight: larger;
+  font-weight: 600;
+}
+
+div.cometchat-list-item__body-subtitle {
+  color: grey;
+  font-family: sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+/* Apply blue background to selected item */
+.selected-item {
+  background-color: #2196F3 !important;
+  width: 98%;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.selected-item .cometchat-list-item {
+  background: transparent !important;
+}
+
+/* Make text white on selected item */
+.selected-item * {
+  color: white !important;
+}
+
+/* Dropdown */
+/* Menu Container */
+.menu-container {
+  position: relative;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  min-width: 180px;
+  z-index: 1000;
+  padding: 8px 0;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Menu Item */
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  gap: 16px;
+}
+
+.menu-item:hover {
+  background-color: #f5f5f5;
+}
+
+/* Profile Item */
+.profile-item {
+  padding: 8px;
+  gap: 8px;
+}
+
+.profile-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-weight: 500;
+  font-size: 12px;
+  color: #000;
+}
+
+/* Menu Icon Symbol */
+.menu-icon-symbol {
+  font-size: 15px;
+  width: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Menu Text */
+.menu-text {
+  flex: 1;
+  font-size: 12px;
+  color: #000;
+  font-weight: 500;
+}
+
+/* Arrow Right */
+.arrow-right {
+  font-size: 24px;
+  color: #888;
+  margin-left: auto;
+}
+
+/* Menu Divider */
+.menu-divider {
+  height: 1px;
+  background-color: #e8e8e8;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-name {
+  width: 35px;
+  height: 35px;
+  background-color: #AA9EE8;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+/* User Header View */
+.user-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #333;
+  gap: 12px;
+}
+
+.arrow-left {
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease;
+}
+
+.arrow-left:hover {
+  opacity: 0.7;
+}
+
+.user-header.search-box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: #2a2a2a;
+  padding: 8px 12px;
+  border-radius: 12px;
+  gap: 8px;
+  border: 1px solid #333;
+}
+
+.user-header.search-icon {
+  color: #b5b5b5;
+  font-size: 16px;
+}
+
+.user-header.search-box input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+}
+
+.user-header.search-box input::placeholder {
+  color: #777;
+}
+
+.arrow-right {
+  position: absolute;
+  bottom: 20px;
+  left: 240px;
+  cursor: pointer;
+}
+
+.new-screen {
+  height: 100%;
+  background-color: white;
+  color: #000;
+}
+
+/* .group-name-input {
+  width: 90%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  margin: 10px auto;
+  display: block;
+} */
+
+.group-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Blue camera circle */
+.group-avatar {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #6da9ff, #4f83ff);
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.camera-icon {
+  font-size: 38px;
+  color: white;
+}
+
+/* Input container like Google-style card */
+.group-input-container {
+  background: #fff;
+  border-radius: 14px;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  margin-top: 12px;
+}
+
+.label {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 3px;
+  display: block;
+}
+
+.group-name-input {
+  width: 100%;
+  padding: 8px 0;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+/* Members list */
+.list-members {
+  margin-top: 20px;
+}
+
+.members-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #3d7cff;
+  margin-bottom: 12px;
+}
+
+.member-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.member-avatar {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.member-avatar.placeholder {
+  background: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #555;
+}
+
+.member-info .member-name {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.member-last-seen {
+  font-size: 12px;
+  color: #777;
+  margin : 0px !important
+}

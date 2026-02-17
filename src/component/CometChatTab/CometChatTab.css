@@ -1,0 +1,45 @@
+.cometchat-tab-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: white;
+    padding: 10px 0;
+    border-top: 1px solid #e5e7eb;
+    position: sticky;
+    bottom: 0;
+    z-index: 50;
+}
+
+.tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    color: #9ca3af; 
+    cursor: pointer;
+    background: none;
+    outline: none;
+}
+
+.tab-icon {
+    width: 22px;
+    height: 22px;
+    color: inherit;
+}
+
+/* Active styling */
+.tab-item.active {
+    color: #6c4dd6; 
+    font-weight: 500;
+    border: none;
+}
+
+.tab-item:hover,
+.tab-item:focus,
+.tab-item:focus-visible,
+.tab-item:active {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}

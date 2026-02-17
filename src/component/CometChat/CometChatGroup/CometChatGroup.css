@@ -1,0 +1,59 @@
+/* Leading View */
+.cometchat-groups .cometchat-list-item .groups__leading-view .cometchat-avatar__image,
+.cometchat-groups .cometchat-list-item .groups__leading-view .cometchat-avatar {
+  border-radius: 8px;
+  height: 48px;
+  width: 48px;
+}
+
+.groups__leading-view-info {
+  display: flex;
+  width: 48px;
+  height: 15px;
+  padding: 1px 3px;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  font: 600 8px/9.6px Roboto;
+  background: #FFAB00;
+  position: absolute;
+  bottom: -2px;
+}
+
+.groups__leading-view-joined .groups__leading-view-info {
+  background: #09C26F;
+}
+
+.groups__leading-view {
+  position: relative;
+}
+
+.user-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.group-header-view {
+  height: 24px;
+  width: 24px;
+  background-image: url("../../../assets/group.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+div.group-header {
+  padding: 5px
+}
+
+.group-header p {
+  margin: 0px;
+  padding: 0px;
+}

@@ -1,0 +1,38 @@
+.fab-container {
+  position: fixed;
+  bottom: 24px;
+  left: 240px;
+  z-index: 2000;
+}
+
+.fab-button {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #37a9e0;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown menu - Opens upward */
+.dropdown-menu {
+  position: absolute;
+  top: -70px;
+  left: -120px;
+}
+
+/* Dropdown items */
+.dropdown-item {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:focus {
+  outline: none !important;
+}
