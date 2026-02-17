@@ -12,6 +12,8 @@
   "dependencies": {
     "@cometchat/calls-sdk-javascript": "^4.2.4",
     "@cometchat/chat-uikit-react": "^6.3.11",
+    "@sentry/react": "^10.39.0",
+    "@sentry/vite-plugin": "^4.9.1",
     "lucide-react": "^0.554.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
